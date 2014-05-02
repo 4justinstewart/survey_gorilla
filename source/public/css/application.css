@@ -7,6 +7,7 @@ body {
   margin: 120px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
+
   border: 1px dotted black;
   border-radius: 8px;
   background-color: #049FC0;
@@ -64,4 +65,39 @@ li {
 
 th {
   text-align: left;
+}
+
+
+
+/*New Survey*/
+
+#survey_header{
+  margin: auto;
+  height: 300px;
+  width: 450px;
+  border: 2px solid gray;
+
+}
+
+#survey_header div {
+  margin: auto;
+  margin-top: auto;
+  height: 150px;
+  width: 250px;
+}
+
+.question_input {
+  background-color: #fffaf0;
+  margin: auto;
+  margin-top: 5px;
+  height: 300px;
+  width: 450px;
+  border: 2px solid gray;
+
+}
+
+.add_poss {
+  float: right;
+  height: 25px;
+  width: 25px;
 }
