@@ -34,6 +34,20 @@ h2 {
 li {
   display: none;
   padding: 7px;
+  text-decoration: none;
+}
+
+.my_hidden_surveys {
+  display: none;
+  position: float;
+  margin: 0px 0px 10px 40px;
+  width: 520px;
+  border-radius: 8px;
+  background-image:
+    linear-gradient(
+      #F2F1F5, #CCCBCF
+    );
+  color: #191724;
 }
 
 .hidden_surveys {
@@ -41,7 +55,6 @@ li {
   position: float;
   margin: 0px 0px 10px 40px;
   width: 520px;
-/*  height: 120px;*/
   border-radius: 8px;
   background-image:
     linear-gradient(

@@ -3,23 +3,23 @@
   <p>Hello, Generic User!</p>
   <div class="dashboard_btn"><h2>Create Survey</h2></div>
   <div class="dashboard_btn">
-    <h2>Your Surveys</h2>
+    <h2 id="my_surveys">My Surveys</h2>
   </div>
   <div class="my_hidden_surveys">
-    <ul>
-      <li id="list_item1">I am list item number 1</li>
-      <li id="list_item2">I am list item number 2</li>
-      <li id="list_item3">I am list item number 3</li>
+    <ul id="my_list">
+      <% @my_surveys.each do |row| %>
+      <li id="my_list_item"><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
+      <% end %>
     </ul>
   </div>
   <div class="dashboard_btn">
     <h2 id="all_surveys">All Surveys</h2>
   </div>
   <div class="hidden_surveys">
-    <ul>
-      <li id="list_item1">I am list item number 1</li>
-      <li id="list_item2">I am list item number 2</li>
-      <li id="list_item3">I am list item number 3</li>
+    <ul id="list">
+      <% @all_surveys.each do |row| %>
+      <li id="my_list_item"><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
+      <% end %>
     </ul>
   </div>
 </div>
