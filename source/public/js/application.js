@@ -1,18 +1,31 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $( "#my_surveys" ).on( "click", function( event ) {
+    event.preventDefault();
+    myhiddenSurvey = $( ".my_hidden_surveys" );
+    myhiddenSurvey.toggle();
+    myhiddenItem = $( "#my_list li");
+    myhiddenItem.show();
+    // for (var i=0;i<4;i++)
+    // {
+    //   myhiddenItem = $( "#my_list_item" + i);
+    //   myhiddenItem.show();
+    // }
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  // var hiddenItem = $( "#list_item1" );
+    // $( "#all_surveys" ).on( "click", function( event ) {
+    //   hiddenSurvey = $( ".hidden_surveys" );
+    //   hiddenSurvey.toggle();
+    // for (var i=0;i<4;i++)
+    // {
+    //   hiddenItem = $( "#list_item" + i);
+    //   hiddenItem.show();
+    // }
+  });
+
   $( "#all_surveys" ).on( "click", function( event ) {
-      hiddenSurvey = $( ".hidden_surveys" );
-      hiddenSurvey.toggle();
-    for (var i=0;i<4;i++)
-    {
-      hiddenItem = $( "#list_item" + i);
-      hiddenItem.show();
-    }
-    // hiddenItem.show();
-});
+    event.preventDefault();
+    hiddenSurvey = $( ".hidden_surveys" );
+    hiddenSurvey.toggle();
+    hiddenItem = $( "#list li");
+    hiddenItem.show();
+  });
 });
