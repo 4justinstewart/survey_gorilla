@@ -3,8 +3,12 @@ get '/' do
   erb :index
 end
 
-
 get '/user/:id/new_survey' do
   # @user = User.find_by_id(params[:id])
   erb :new_survey
 end
+
+get '/dashboard' do
+  erb :dashboard
+end
+

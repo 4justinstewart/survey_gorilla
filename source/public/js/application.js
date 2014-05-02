@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   $('a').on("click", function(event){
     event.preventDefault();
     console.log(q_form)
@@ -20,6 +21,20 @@ $(document).ready(function() {
 
 
 
+
+
+  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // var hiddenItem = $( "#list_item1" );
+  $( "#all_surveys" ).on( "click", function( event ) {
+      hiddenSurvey = $( ".hidden_surveys" );
+      hiddenSurvey.toggle();
+    for (var i=0;i<4;i++)
+    {
+      hiddenItem = $( "#list_item" + i);
+      hiddenItem.show();
+    }
+    // hiddenItem.show();
+});
 
 });
 

@@ -1,8 +1,55 @@
+body {
+  font-family: futura;
+  background-color: #191724;
+}
+
 .container {
-  margin: 20px auto;
+  margin: 120px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
+
+  border: 1px dotted black;
+  border-radius: 8px;
+  background-color: #049FC0;
+  color: #F2F1F5;
 }
+
+.dashboard_btn {
+  position: float;
+  margin: 0px 0px 10px 40px;
+  width: 520px;
+  height: 70px;
+  border-radius: 8px;
+  background-image:
+    linear-gradient(
+      #C8DE98, #C5DA54
+    );
+  color: #191724;
+}
+
+h2 {
+  padding: 20px;
+}
+
+li {
+  display: none;
+  padding: 7px;
+}
+
+.hidden_surveys {
+  display: none;
+  position: float;
+  margin: 0px 0px 10px 40px;
+  width: 520px;
+/*  height: 120px;*/
+  border-radius: 8px;
+  background-image:
+    linear-gradient(
+      #F2F1F5, #CCCBCF
+    );
+  color: #191724;
+}
+
 th {
   text-align: left;
 }
