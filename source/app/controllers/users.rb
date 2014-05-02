@@ -1,17 +1,20 @@
-post '/signin' do
-  user = User.find_by_email(params[:email])
+enable :sessions
 
-  if user && user.authenticate(params[:password])
-    session[:user_id] = user.id
-    redirect to("/user/#{user.id}") #get '/user/:id' route
-  else
-    @errors = {:Invalid=>["Incorrect Login"]}
-    redirect to('/')
-  end
+post '/signin' do
+  @user = User.find_by_email(params[:email])
+
+  # if user && user(params[:password_hash])
+  #   session[:user_id] = user.id
+  #   redirect to("/user/#{user.id}") #get '/user/:id' route
+  # else
+  #   @errors = {:Invalid=>["Incorrect Login"]}
+  #   redirect to('/')
+#  end
+  erb :dashboard
 end
 
 get '/signin' do
-  erb :"signin_form"
+  erb :signin
 end
 
 get '/user/signout' do
@@ -27,23 +30,23 @@ get '/user/signup' do
   erb :"new_user"
 end
 
-post '/user/new' do
-  user = User.new(params[:user])
-  if user.save
+post '/signup' do
+  @user = User.new(params[:user])
+  if @user.save
     session[:user_id] = user.id
     redirect to("/user/#{user.id}") #get '/user/:id' route
   else
     @errors = user.errors.messages
-    erb :"new_user"
+    erb :dashboard
   end
 end
 
 # READ routes ---------------------------------------------------
 
 # user homepage
-get '/user/:id' do
-  @user = User.find(session[:user_id])
-  @user_surveys = Survey.all.where(user_id: session[:user_id])
-  redirect to("/") if @user.id != params[:id].to_i
-  erb :"user_views/show"
-end
+# get '/user/:id' do
+#   @user = User.find(session[:user_id])
+#   @user_surveys = Survey.all.where(user_id: session[:user_id])
+#   redirect to("/") if @user.id != params[:id].to_i
+#   erb :"user_views/show"
+# end
