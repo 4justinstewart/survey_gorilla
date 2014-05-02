@@ -17,6 +17,7 @@ end
 
 
 
+
 # get '/signin' do
 #   erb :index
 # end
@@ -37,3 +38,14 @@ end
 #   @user = User.find(session[:user_id])
 #   redirect to("/user/#{@user.id}")
 # end
+
+get '/user/:id/new_survey' do
+  # @user = User.find_by_id(params[:id])
+  erb :new_survey
+end
+
+get '/dashboard' do
+  erb :dashboard
+end
+
+
