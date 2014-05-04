@@ -88,16 +88,28 @@ th {
 
 .question_input {
   background-color: #fffaf0;
+  border-radius: 10px;
   margin: auto;
   margin-top: 5px;
   height: 300px;
   width: 450px;
   border: 2px solid gray;
+  color: black;
 
+}
+
+.question_input form {
+  width:300px;
+  margin: auto;
 }
 
 .add_poss {
   float: right;
   height: 25px;
   width: 25px;
+}
+
+#errors li {
+  display:block;
+  color:red;
 }
