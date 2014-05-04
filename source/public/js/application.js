@@ -5,19 +5,36 @@ $(document).ready(function() {
   $('a').on("click", function(event){
 
     event.preventDefault();
+    $('#errors').empty();
+
     if ($('#question_location').has('div').length > 0) {
+
+
       var data = $('#the_q_form').serialize();
 
+      var errorsList = []
+      var user_question = $('input[name=question]').val();
 
+      if (!user_question.length > 0) {
 
+        errorsList.push("<li>You need a Question!</li>")
+      }
+
+      if (errorsList.length > 0) {
+      for (err in errorsList) {
+        console.log(errorsList[err])
+        $('#errors').append(errorsList[err])
+      }}
+
+      else {
 
       $.post('/question', data);
-
-
 
       $('.question_input').remove();
 
       $('#question_location').append(q_form);
+
+      }
 
 
     }
@@ -87,6 +104,6 @@ var image_add_possible_answer = "Add a possible answer<img class='add_poss' src=
 var form_for_question = "<form id='the_q_form' method='post' action='#'><input type='text' name='question' placeholder='What's your question?''><br><input class='possible-answer-slots' type='text' name='possibility-1' placeholder='Enter a possible response'><br><input class='possible-answer-slots' type='text' name='possibility-2' placeholder='Enter a possible response'></form>"
 
 
-var q_form = "<div class='question_input'>" + image_remove + form_for_question + image_add_possible_answer + "</div>"
+var q_form = "<div class='question_input'><ul id='errors'></ul>" + image_remove + form_for_question + image_add_possible_answer + "</div>"
 
 

@@ -108,3 +108,8 @@ th {
   height: 25px;
   width: 25px;
 }
+
+#errors li {
+  display:block;
+  color:red;
+}
