@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Create a Survey</h1>
   <div id="survey_header">
-    <form method="post" action="#">
+    <form method="post" action="/user/<%=@user.id%>/dashboard" id="survey_form">
       <div id="survey_name">
 
       <label for="title">Survey Name</label>
@@ -25,5 +25,5 @@
   <div id="question_location">
 
   </div>
-  <a href="#">Add Question</a>
+  <a href="#" id="question_adder">Add Question</a>
 </div>

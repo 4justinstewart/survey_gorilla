@@ -2,11 +2,15 @@ get '/surveys' do # SHOW ALL SURVEYS
 
 end
 
-get '/surveys/new' do # Step 1.) CREATE NEW SURVEY via form
-
+get '/surveys/new/:id' do # Step 1.) CREATE NEW SURVEY via form
+  @user = User.find_by_id(params[:id])
+  erb :new_survey
 end
 
-post '/surveys' do # Step 2.) CREATE NEW SURVEY .create()
+
+# post '/user/:id/survey/id'
+
+post '/surveys/new/:id' do # Step 2.) CREATE NEW SURVEY .create()
 
 end
 

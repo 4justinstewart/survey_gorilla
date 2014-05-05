@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
-
-
-  $('a').on("click", function(event){
+  $('#question_adder').on("click", function(event){
 
     event.preventDefault();
+    console.log("bbbb")
     $('#errors').empty();
 
     if ($('#question_location').has('div').length > 0) {
@@ -40,7 +39,8 @@ $(document).ready(function() {
     }
     else {
       // instantiate survey into data table
-      $.post("/make_survey", function(response){
+      var data = $('#survey_form').serialize();
+      $.post("/make_survey", data, function(response){
         console.log(response)
         $('#the_q_form').append("<input type='hidden' name='survey_id' value=" + response + ">")
       })
@@ -48,25 +48,9 @@ $(document).ready(function() {
 
     }
 
-
-
-
-
-
-
-
-
-    // $('#question_location').append(q_form)
-
-
-    // $(".delete_question").on("click", function(){
-    // console.log("this")
-    // $(this).parent().remove();
-    // });
-
     $('.add_poss').on('click', function(){
       var length = $('.possible-answer-slots').length + 1
-      
+
 
 
       $(this).siblings('form').append(addPossibleResponse_first_part + length + addPossibleResponse_second_part )
@@ -75,22 +59,10 @@ $(document).ready(function() {
   });
 
 
+  // $('#survey_form').on('click', function(event){
 
+  // });
 
-
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  // var hiddenItem = $( "#list_item1" );
-  $( "#all_surveys" ).on( "click", function( event ) {
-      hiddenSurvey = $( ".hidden_surveys" );
-      hiddenSurvey.toggle();
-    for (var i=0;i<4;i++)
-    {
-      hiddenItem = $( "#list_item" + i);
-      hiddenItem.show();
-    }
-    // hiddenItem.show();
-});
 
 });
 

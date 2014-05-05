@@ -1,17 +1,21 @@
   <div class="container home">
 
-  <h1 class="home">Welcome to These Damn Surveys</h1>
+  <h1 class="home">Welcome to Survey Gorilla</h1>
   <p><%= @message %></p>
 <!--   <h3><a href = "/sign_in" id='sign_in'>Sign In </a></h3>
  -->  <!-- <h3><a href="/sign_up" id='sign_up'>Create a new account</a></h3> -->
 
 
 <div id ="signin">
-  <h6><%= @error %></h6>
+  <%if @errors %>
+  <% @errors.each do |err| %>
+  <h6><%= err %></h6>
+  <%end%>
+  <%end%>
 </div>
  <div class="column">
   <h3>Sign In:</h3>
-    <form id="sign-in" class="form" 
+    <form id="sign-in" class="form"
        action="/signin" method="POST">
       <input type="text" placeholder="Email" name="email">
       <input type="password" placeholder="Password" name="password">
@@ -27,7 +31,7 @@
       <br>
       <input type="password" placeholder="Password" name="user[password]">
       <br>
-      <input type="password" placeholder="Confirm password" name="user[password_confirmation]">
+      <input type="password" placeholder="Confirm password" name="password_confirmation">
       <br>
       <br>
       <input type="submit" value="Sign Up" class="button">
@@ -36,11 +40,11 @@
   </form>
  </div>
 </div>
-  
 
 
 
 
 
-  
+
+
 

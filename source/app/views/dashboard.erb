@@ -1,14 +1,15 @@
 <div class="container">
   <h1>Welcome to your Dashboard!</h1>
-  <p>Hello, Generic User!</p>
-  <div class="dashboard_btn"><h2>Create Survey</h2></div>
+  <p>Hello, <%= @user.name %>!</p>
+  <p>Logged in at: <%= @time %></p>
+  <div class="dashboard_btn"><a href="/surveys/new/<%= @user.id %>"><h2>Create Survey</h2></a></div>
   <div class="dashboard_btn">
     <h2 id="my_surveys">My Surveys</h2>
   </div>
   <div class="my_hidden_surveys">
     <ul id="my_list">
       <% @my_surveys.each do |row| %>
-      <li id="my_list_item"><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
+      <li><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
       <% end %>
     </ul>
   </div>
@@ -18,7 +19,7 @@
   <div class="hidden_surveys">
     <ul id="list">
       <% @all_surveys.each do |row| %>
-      <li id="my_list_item"><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
+      <li><a href="/surveys/<%= row.id %>"><%= row.title %></a></li>
       <% end %>
     </ul>
   </div>
